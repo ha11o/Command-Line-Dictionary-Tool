@@ -25,7 +25,7 @@ function HandleWordCommands(command,word){
       break;
 
     default:
-      console.log("Wrong Options please check and type");
+      console.log(config.WrongOptions);
 
   }
 }
@@ -36,7 +36,7 @@ function ParseInput(commandsPassed){
         if (commandsPassed.length === 2){
 
             command    = commandsPassed[0];
-            word  = commandsPassed[1];
+            word       = commandsPassed[1];
 
             HandleWordCommands(command,word);
 
@@ -48,7 +48,7 @@ function ParseInput(commandsPassed){
                     Play();
                 }
                 else{
-                  console.log("Wrong command!");
+                  console.log(config.WrongCommand);
                 }
             }
             else if (commandsPassed.length === 0) {
@@ -57,7 +57,7 @@ function ParseInput(commandsPassed){
 
             }
             else{
-              console.log("Wrong commands!");
+              console.log(config.WrongCommand);
             }
         }
 

@@ -25,4 +25,10 @@ config.word.examples     = "examples";
 config.word.relatedWords = "relatedWords";
 
 
+
+//output wrong command messages
+config.WrongOptions = "Wrong Options please check and type";
+config.WrongCommand = "Wrong command!";
+
+
 module.exports = config;
