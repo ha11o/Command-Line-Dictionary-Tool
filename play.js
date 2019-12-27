@@ -93,7 +93,7 @@ function start(word,fulldict){
 }
 
 function letsPlay(word){
-  console.log("\r\n let's play bamboozled :) \r\n");
+  console.log("\r\n **********  let's play bamboozled :)  ******** \r\n");
   getData.GetRandomWord()
       .then(
           result => {
