@@ -7,8 +7,15 @@ var   config    = require('./config');
 
 
 
+function Play(){
 
-async function HandleWordCommands(command,word){
+  play.letsPlay()
+
+}
+
+
+
+function HandleWordCommands(command,word){
 
   switch(command) {
 
@@ -89,33 +96,6 @@ async function HandleWordCommands(command,word){
 
 
 
-function Play(){
-
-  getData.GetRandomWord()
-      .then(
-          result => {
-              var randomWord = handleResponses.GetRandomWord(result);
-              console.log(randomWord);
-              getData.GetWordFullDict(randomWord)
-                        .then(
-                            result => {
-                                play.start(handleResponses.GetWordFullDict(result));
-                            }
-                        )
-
-          }
-      )
-      .catch(
-        err => {
-            throw new Error(err);
-        }
-      )
-      .finally(
-
-      );
-
-
-}
 
 
 function ParseInput(commandsPassed){
@@ -158,7 +138,7 @@ function ParseInput(commandsPassed){
                         .then(
                             result => {
                                 var randomWord = handleResponses.GetRandomWord(result);
-                                console.log(randomWord);
+                                console.log("Day word : " + randomWord);
                                 getData.GetWordFullDict(randomWord)
                                           .then(
                                               result => {
