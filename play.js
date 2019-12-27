@@ -19,7 +19,7 @@ function GiveOptions(word,fulldict){
       .prompt([
         {
           name: 'selection',
-          message: "Please select one of the following option\r\n 1 -> try again \n 2 -> hint \n 3 -> quit\r\n",
+          message: "please select one of the following option\r\n 1 -> try again \n 2 -> hint \n 3 -> quit\r\n",
           default: '',
         },
       ])
@@ -30,9 +30,7 @@ function GiveOptions(word,fulldict){
             askQuestionCheckAnswer(word,fulldict);
             break;
           case '2':
-            console.log("\r\n");
-            console.log(shuffelWord(word));
-            console.log("\r\n");
+            console.log("\r\nshuffled word:" + shuffelWord(word)+"\r\n");
             askQuestionCheckAnswer(word,fulldict);
             break;
           case '3':
@@ -69,9 +67,9 @@ function askQuestionCheckAnswer(word,fulldict){
           },
         ])
         .then(answer => {
-            console.log("\r\nYou entered " +answer.word);
+            console.log("\r\nyou entered " +answer.word);
             if(word.toLowerCase() === answer.word.toLowerCase() || checkInList(answer.word,fulldict.Synonym)){
-                console.log("\nYou have gussed correctly!\r\nHurray!\r\n");
+                console.log("\nyou have guessed correctly!\r\nHurray!\r\n");
             }
             else {
               GiveOptions(word,fulldict);
@@ -84,7 +82,7 @@ function askQuestionCheckAnswer(word,fulldict){
 function start(word,fulldict){
 
 
-      console.log("\r\nCan you guess the word?\n");
+      console.log("\r\ncan you guess the word?\n");
       askQuestionCheckAnswer(word,fulldict);
 
 
