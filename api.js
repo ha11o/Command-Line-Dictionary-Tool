@@ -21,7 +21,7 @@ function UrlGenerator(dataTypeRequested,word=""){
 
       if(dataTypeRequested === config.word.randomWord){
 
-          var url =  urljoin(api_host,"words",word,dataTypeRequested,"?api_key="+api_key);
+          var url =  urljoin(api_host,"words",dataTypeRequested,"?api_key="+api_key);
           return url;
 
       }
