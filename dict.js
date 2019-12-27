@@ -1,7 +1,8 @@
 const request = require("request");
 const util    = require('util');
-const getData = require("./getdata")
-const handleResponses = require('./handleResponses')
+const getData = require("./getdata");
+const handleResponses = require('./handleResponses');
+const play    = require("./play");
 var   config    = require('./config');
 
 
@@ -83,6 +84,37 @@ async function HandleWordCommands(command,word){
       console.log(config.WrongOptions);
 
   }
+}
+
+
+
+
+function Play(){
+
+  getData.GetRandomWord()
+      .then(
+          result => {
+              var randomWord = handleResponses.GetRandomWord(result);
+              console.log(randomWord);
+              getData.GetWordFullDict(randomWord)
+                        .then(
+                            result => {
+                                play.start(handleResponses.GetWordFullDict(result));
+                            }
+                        )
+
+          }
+      )
+      .catch(
+        err => {
+            throw new Error(err);
+        }
+      )
+      .finally(
+
+      );
+
+
 }
 
 
