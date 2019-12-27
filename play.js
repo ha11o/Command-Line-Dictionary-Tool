@@ -93,11 +93,7 @@ function start(word,fulldict){
 }
 
 function letsPlay(word){
-<<<<<<< HEAD
   console.log("\r\n **********  let's play bamboozled :)  ******** \r\n");
-=======
-  console.log("\r\n let's play bamboozled :) \r\n");
->>>>>>> 967329ba1670990665e8c304cbec89a98d0474c1
   getData.GetRandomWord()
       .then(
           result => {
