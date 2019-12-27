@@ -59,8 +59,6 @@ function checkInList(word,list){
 }
 
 function askQuestionCheckAnswer(word,fulldict){
-  console.log(word);
-  console.log(fulldict);
 
   inquirer
         .prompt([
