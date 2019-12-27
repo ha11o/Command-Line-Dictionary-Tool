@@ -1,29 +1,82 @@
 const request = require("request");
 const util    = require('util');
-const GetData = require("./getdata")
-
+const getData = require("./getdata")
+const handleResponses = require('./handleResponses')
 var   config    = require('./config');
 
 
 
 
-function HandleWordCommands(command,word){
+async function HandleWordCommands(command,word){
+
   switch(command) {
 
     case "defn":
-      console.log(GetDefination(word));
+      getData.GetDefination(word)
+              .then(
+                  result => {
+                      console.log(handleResponses.GetDefination(result));
+                  }
+              )
+              .catch(
+                err => {
+                    throw new Error(err);
+                }
+              )
+              .finally(
+
+              );
       break;
 
     case "syn":
-      console.log(GetSynonym(word));
+      getData.GetSynonym(word)
+              .then(
+                  result => {
+                      console.log(handleResponses.GetSynonym(result));
+                  }
+              )
+              .catch(
+                err => {
+                    throw new Error(err)
+                }
+              )
+              .finally(
+
+              );
       break;
 
     case "ant":
-      console.log(GetAntonym(word));
+      getData.GetAntonym(word)
+              .then(
+                  result => {
+                      console.log(handleResponses.GetAntonym(result));
+                  }
+              )
+              .catch(
+                err => {
+                    throw new Error(err)
+                }
+              )
+              .finally(
+
+              );
       break;
 
     case "ex":
-      console.log(GetExample(word));
+      getData.GetExample(word)
+              .then(
+                  result => {
+                      console.log(handleResponses.GetExample(result));
+                  }
+              )
+              .catch(
+                err => {
+                    throw new Error(err)
+                }
+              )
+              .finally(
+
+              );
       break;
 
     default:
@@ -50,13 +103,47 @@ function ParseInput(commandsPassed){
                     Play();
                 }
                 else{
-                  console.log(GetWordFullDict(command));
+                   getData.GetWordFullDict(command)
+                            .then(
+                                result => {
+                                    console.log(handleResponses.GetWordFullDict(result));
+                                }
+                            )
+                            .catch(
+                              err => {
+                                  throw new Error(err);
+                              }
+                            )
+                            .finally(
+
+                            );
 
                 }
             }
             else if (commandsPassed.length === 0) {
 
-                console.log(GetRandomWordFullDict());
+                    getData.GetRandomWord()
+                        .then(
+                            result => {
+                                var randomWord = handleResponses.GetRandomWord(result);
+                                console.log(randomWord);
+                                getData.GetWordFullDict(randomWord)
+                                          .then(
+                                              result => {
+                                                  console.log(handleResponses.GetWordFullDict(result));
+                                              }
+                                          )
+
+                            }
+                        )
+                        .catch(
+                          err => {
+                              throw new Error(err);
+                          }
+                        )
+                        .finally(
+
+                        );
 
             }
             else{
