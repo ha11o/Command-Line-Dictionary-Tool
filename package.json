@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/ha11o/Command-Line-Dictionary-Tool/issues"
   },
-  "homepage": "https://github.com/ha11o/Command-Line-Dictionary-Tool#readme"
+  "homepage": "https://github.com/ha11o/Command-Line-Dictionary-Tool#readme",
+  "dependencies": {
+    "commander": "^4.0.1",
+    "request": "^2.88.0",
+    "url-join": "^4.0.1"
+  }
 }
