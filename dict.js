@@ -1,6 +1,8 @@
 const request = require("request");
 const util    = require('util');
-var  config    = require('./config');
+const GetData = require("./getdata")
+
+var   config    = require('./config');
 
 
 
@@ -48,7 +50,8 @@ function ParseInput(commandsPassed){
                     Play();
                 }
                 else{
-                  console.log(config.WrongCommand);
+                  GetWordFullDict(command);
+                  
                 }
             }
             else if (commandsPassed.length === 0) {
