@@ -11,19 +11,19 @@ function HandleWordCommands(command,word){
   switch(command) {
 
     case "defn":
-      GetDefination(word);
+      console.log(GetDefination(word));
       break;
 
     case "syn":
-      GetSynonym(word);
+      console.log(GetSynonym(word));
       break;
 
     case "ant":
-      GetAntonym(word);
+      console.log(GetAntonym(word));
       break;
 
     case "ex":
-      GetExample(word);
+      console.log(GetExample(word));
       break;
 
     default:
@@ -50,13 +50,13 @@ function ParseInput(commandsPassed){
                     Play();
                 }
                 else{
-                  GetWordFullDict(command);
-                  
+                  console.log(GetWordFullDict(command));
+
                 }
             }
             else if (commandsPassed.length === 0) {
 
-                GetRandomWordFullDict();
+                console.log(GetRandomWordFullDict());
 
             }
             else{
