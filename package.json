@@ -1,0 +1,19 @@
+{
+  "name": "dict",
+  "version": "1.0.0",
+  "description": "command-line dictionary tool ",
+  "main": "dict.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/ha11o/Command-Line-Dictionary-Tool.git"
+  },
+  "author": "h@!!o",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ha11o/Command-Line-Dictionary-Tool/issues"
+  },
+  "homepage": "https://github.com/ha11o/Command-Line-Dictionary-Tool#readme"
+}
